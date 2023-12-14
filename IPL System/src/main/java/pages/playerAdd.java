@@ -67,6 +67,7 @@ public class playerAdd extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html");
 		try(PrintWriter pw =response.getWriter()) {
 			HttpSession hs=request.getSession();
 			
@@ -95,7 +96,7 @@ public class playerAdd extends HttpServlet {
 							int id=team.getTeamId();
 							Player player=new Player(fName[0],fName[1],date,batting_avg,wicket_taken,id);
 					        String s = playerDao.addPlayerToTeam(player,id);
-					        pw.print("<h5>"+s+"</h5");
+					        pw.print("<h5>"+s+"</h5>");
 						}
 				   }
 				}
